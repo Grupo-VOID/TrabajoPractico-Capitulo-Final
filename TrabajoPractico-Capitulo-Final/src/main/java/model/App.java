@@ -17,9 +17,9 @@ public class App {
 		PromocionDAO promocionesDAO = DAOFactory.getPromocionesDAO();
 
 		ParqueAtracciones parque = new ParqueAtracciones();
-		parque.agregarUsuarios(usuarioDAO.findAll());
-		parque.agregarAtracciones(new LinkedList<Adquirible>(atraccionesDAO.findAll()));
-		parque.agregarPromociones(new LinkedList<Adquirible>(promocionesDAO.findAll()));
+		parque.agregarListaUsuarios(usuarioDAO.findAll());
+		parque.agregarListaAtracciones(new LinkedList<Adquirible>(atraccionesDAO.findAll()));
+		parque.agregarListaPromociones(new LinkedList<Adquirible>(promocionesDAO.findAll()));
 
 		parque.cargarCatalogo();
 

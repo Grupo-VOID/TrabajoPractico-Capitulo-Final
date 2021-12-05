@@ -9,16 +9,40 @@ public class ParqueAtracciones {
 	private LinkedList<Adquirible> catalogo = new LinkedList<Adquirible>();
 	private List<Usuario> usuarios;
 
-	public void agregarAtracciones(List<Adquirible> atracciones) {
+	public void agregarListaAtracciones(List<Adquirible> atracciones) {
 		this.atracciones = atracciones;
 	}
 
-	public void agregarPromociones(List<Adquirible> promociones) {
+	public void agregarListaPromociones(List<Adquirible> promociones) {
 		this.promociones = promociones;
 	}
 
-	public void agregarUsuarios(List<Usuario> usuarios) {
+	public void agregarListaUsuarios(List<Usuario> usuarios) {
 		this.usuarios = usuarios;
+	}
+	
+	public void agregarUsuario(Usuario usuario) {
+		this.usuarios.add(usuario);
+	}
+	
+	public void eliminarUsuario(Usuario usuario) {
+		this.usuarios.remove(usuario);
+	}
+	
+	public void agregarAtraccion(Atraccion atraccion) {
+		this.atracciones.add(atraccion);
+	}
+	
+	public void eliminarAtraccion(Atraccion atraccion) {
+		this.atracciones.remove(atraccion);
+	}
+	
+	public void agregarPromocion(Promocion promocion) {
+		this.promociones.add(promocion);
+	}
+	
+	public void eliminarPromocion(Promocion promocion) {
+		this.promociones.remove(promocion);
 	}
 
 	public void mostrarUsuarios() {

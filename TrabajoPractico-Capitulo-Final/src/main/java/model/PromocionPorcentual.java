@@ -5,12 +5,14 @@ import dao.DAOFactory;
 
 public class PromocionPorcentual extends Promocion {
 
+	private int id;
 	private double porcentajeDescuento = 0;
 	private Atraccion atraccionUno, atraccionDos;
 
-	public PromocionPorcentual(String tematica, Atraccion atraccion1, Atraccion atraccion2,
+	public PromocionPorcentual(int id, String tematica, Atraccion atraccion1, Atraccion atraccion2,
 			double porcentajeDescuento) {
 		super(tematica);
+		this.id = id;
 		this.atraccionUno = atraccion1;
 		this.atraccionDos = atraccion2;
 		this.porcentajeDescuento = porcentajeDescuento;
@@ -46,8 +48,8 @@ public class PromocionPorcentual extends Promocion {
 		this.atraccionDos.comprar();
 		
 		AtraccionDAO atraccionDAO = DAOFactory.getAtraccionesDAO();
-		atraccionDAO.updateCupoActual(atraccionUno);
-		atraccionDAO.updateCupoActual(atraccionDos);
+		atraccionDAO.updateAtraccion(atraccionUno);
+		atraccionDAO.updateAtraccion(atraccionDos);
 	}
 
 	@Override
@@ -59,5 +61,17 @@ public class PromocionPorcentual extends Promocion {
 	public Atraccion[] atraccionesIncluidas() {
 		Atraccion[] atracciones = { this.atraccionUno, this.atraccionDos };
 		return atracciones;
+	}
+	
+	public String getTipoPromocion() {
+		return "PORCENTUAL";
+	}
+
+	public double getPorcentajeDescuento() {
+		return porcentajeDescuento;
+	}
+	
+	public int getId() {
+		return id;
 	}
 }

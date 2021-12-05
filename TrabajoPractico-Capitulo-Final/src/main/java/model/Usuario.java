@@ -9,28 +9,28 @@ import dao.UsuarioDAO;
 public class Usuario {
 
 	private final int ID;
-	private final String NOMBRE;
-	private final String TEMATICA_FAVORITA;
-	private final double MONEDAS_INICIALES;
+	private String nombre;
+	private String tematicaFavorita;
+	private double monedasIniciales;
 	private double monedasDisponibles;
-	private final double TIEMPO_INICIAL;
+	private double tiempoInicial;
 	private double tiempoDisponible;
 	protected Itinerario itinerarioUsuario;
 	private ArrayList<Atraccion> listaAtracciones = new ArrayList<Atraccion>();
 
 	public Usuario(int id, String nombre, String tematica, double monedas, double tiempo) {
 		this.ID = id;
-		this.NOMBRE = nombre;
-		this.TEMATICA_FAVORITA = tematica;
-		this.MONEDAS_INICIALES = monedas;
+		this.nombre = nombre;
+		this.tematicaFavorita = tematica;
+		this.monedasIniciales = monedas;
 		this.monedasDisponibles = monedas;
-		this.TIEMPO_INICIAL = tiempo;
-		this.tiempoDisponible = TIEMPO_INICIAL;
+		this.tiempoInicial = tiempo;
+		this.tiempoDisponible = tiempoInicial;
 		this.itinerarioUsuario = new Itinerario();
 	}
 
 	public String getNombre() {
-		return NOMBRE;
+		return nombre;
 	}
 
 	public int getID() {
@@ -38,7 +38,7 @@ public class Usuario {
 	}
 
 	public String getTematica() {
-		return TEMATICA_FAVORITA;
+		return tematicaFavorita;
 	}
 
 	public double getMonedasDisponibles() {
@@ -57,7 +57,7 @@ public class Usuario {
 	}
 
 	public double monedasUtilizadas() {
-		return this.MONEDAS_INICIALES - this.monedasDisponibles;
+		return this.monedasIniciales - this.monedasDisponibles;
 	}
 
 	public void aceptarSugerencia(Adquirible sugerencia) {
@@ -74,15 +74,15 @@ public class Usuario {
 	}
 
 	public double getMonedasIniciales() {
-		return MONEDAS_INICIALES;
+		return monedasIniciales;
 	}
 
 	public double getTiempoInicial() {
-		return TIEMPO_INICIAL;
+		return tiempoInicial;
 	}
 
 	@Override
 	public String toString() {
-		return this.NOMBRE + this.tiempoDisponible;
+		return this.nombre + this.tiempoDisponible;
 	}
 }

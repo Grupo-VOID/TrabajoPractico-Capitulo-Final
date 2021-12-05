@@ -5,12 +5,14 @@ import dao.DAOFactory;
 
 public class PromocionAbsoluta extends Promocion {
 
+	private int id;
 	private double descuento = 0;
 	private Atraccion atraccionUno;
 	private Atraccion atraccionDos;
 
-	public PromocionAbsoluta(String tematica, Atraccion atraccion1, Atraccion atraccion2, double descuento) {
+	public PromocionAbsoluta(int id, String tematica, Atraccion atraccion1, Atraccion atraccion2, double descuento) {
 		super(tematica);
+		this.id = id;
 		this.atraccionUno = atraccion1;
 		this.atraccionDos = atraccion2;
 		this.descuento = descuento;
@@ -44,8 +46,8 @@ public class PromocionAbsoluta extends Promocion {
 		this.atraccionDos.comprar();
 		
 		AtraccionDAO atraccionDAO = DAOFactory.getAtraccionesDAO();
-		atraccionDAO.updateCupoActual(atraccionUno);
-		atraccionDAO.updateCupoActual(atraccionDos);
+		atraccionDAO.updateAtraccion(atraccionUno);
+		atraccionDAO.updateAtraccion(atraccionDos);
 	}
 
 	@Override
@@ -56,5 +58,17 @@ public class PromocionAbsoluta extends Promocion {
 				+ "\n Tematica: " + this.getTematica()
 				+ "\n Costo Total= $" + this.getCosto()
 				+ "\n Duracion Total= " + this.getTiempo() + " horas");
+	}
+
+	public String getTipoPromocion() {
+		return "ABSOLUTA";
+	}
+
+	public double getDescuento() {
+		return descuento;
+	}
+	
+	public int getId() {
+		return id;
 	}
 }
