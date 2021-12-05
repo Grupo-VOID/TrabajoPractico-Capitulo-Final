@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Objects;
+
 import dao.AtraccionDAO;
 import dao.DAOFactory;
 import model.Atraccion;
@@ -77,5 +79,26 @@ public class Atraccion implements Adquirible {
 				+ ". Tematica: " + this.getTematica()
 				+ "\n Costo Total= $" + this.getCosto()
 				+ "\n Duracion Total= " + this.getTiempo() + " horas");
+	}
+	
+	@Override
+	public int hashCode() {
+		return Objects.hash(costo, cupoMaximo, duracion, nombre, tematica, lugaresOcupados);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Atraccion other = (Atraccion) obj;
+		return Double.doubleToLongBits(costo) == Double.doubleToLongBits(other.costo)
+				&& cupoMaximo == other.cupoMaximo
+				&& Double.doubleToLongBits(duracion) == Double.doubleToLongBits(other.duracion)
+				&& Objects.equals(nombre, other.nombre) && Objects.equals(tematica, other.tematica)
+				&& lugaresOcupados == other.lugaresOcupados;
 	}
 }

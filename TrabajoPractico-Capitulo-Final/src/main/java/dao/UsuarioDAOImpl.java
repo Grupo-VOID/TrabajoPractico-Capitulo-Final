@@ -34,7 +34,7 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 
 	public int updateUsuario(Usuario usuario) {
 		try {
-			String sql = "UPDATE usuarios SET nombre_usuario = ?, dinero_disponible = ?, tiempo_disponible = ?, id_tematica_favorita = ? WHERE id_usuario = ?";
+			String sql = "UPDATE usuarios SET nombre_usuario = ?, dinero_disponible = ?, tiempo_disponible = ?, id_tematica_preferida = ? WHERE id_usuario = ?";
 			Connection conn = ConnectionProvider.getConnection();
 
 			TipoAtraccionDAO tipoAtraccionDAO = DAOFactory.getTipoAtraccionDAO();

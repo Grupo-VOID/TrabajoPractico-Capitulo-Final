@@ -297,7 +297,8 @@ public class PromocionDAOImpl implements PromocionDAO {
 			String sql = "SELECT promociones.*, group_concat(ap.id_atraccion,' ') AS lista_atracciones\r\n"
 					+ "FROM promociones\r\n"
 					+ "JOIN atracciones_promociones ap ON ap.id_promocion = promociones.id_promocion\r\n"
-					+ "WHERE promociones.id_promocion = ?\r\n" + "GROUP BY promociones.id_promocion";
+					+ "WHERE promociones.id_promocion = ?\r\n"
+					+ "GROUP BY promociones.id_promocion";
 			Connection conn = ConnectionProvider.getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql);
 			statement.setInt(1, id);

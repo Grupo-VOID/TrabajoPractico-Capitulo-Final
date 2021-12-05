@@ -6,22 +6,38 @@ import dao.DAOFactory;
 import dao.ItinerarioDAO;
 
 public class Itinerario {
+
 	private ArrayList<Adquirible> listaAtracciones = new ArrayList<Adquirible>();
 	private double tiempoTotal = 0;
 	private double costoMonedas = 0;
 
 	public void agregarAdquirible(Adquirible nuevaAtraccion, Usuario usuario) {
+
 		listaAtracciones.add(nuevaAtraccion);
 		tiempoTotal += nuevaAtraccion.getTiempo();
-		costoMonedas += nuevaAtraccion.getCosto();		
+		costoMonedas += nuevaAtraccion.getCosto();
 
 		ItinerarioDAO itinerarioDAO = DAOFactory.getItinerarioDAO();
 
-		if(nuevaAtraccion.esPromocion()) {
+		if (nuevaAtraccion.esPromocion()) {
 			itinerarioDAO.insertPromocion(usuario, nuevaAtraccion);
 		} else {
 			itinerarioDAO.insertAtraccion(usuario, nuevaAtraccion);
 		}
+	}
+
+	public ArrayList<Adquirible> agregarAdquiriblesComprados(Usuario usuario) {
+
+		ItinerarioDAO itinerarioDAO = DAOFactory.getItinerarioDAO();
+		ArrayList<Adquirible> adquiribles = (ArrayList<Adquirible>) itinerarioDAO.obtenerAdquiribles(usuario.getID());
+
+		for (Adquirible adquirible : adquiribles) {
+			tiempoTotal += adquirible.getTiempo();
+			costoMonedas += adquirible.getCosto();
+			listaAtracciones.add(adquirible);
+		}
+
+		return adquiribles;
 	}
 
 	public ArrayList<Adquirible> getListaAtracciones() {

@@ -44,7 +44,7 @@ public class PromocionAbsoluta extends Promocion {
 	public void comprar() {
 		this.atraccionUno.comprar();
 		this.atraccionDos.comprar();
-		
+
 		AtraccionDAO atraccionDAO = DAOFactory.getAtraccionesDAO();
 		atraccionDAO.updateAtraccion(atraccionUno);
 		atraccionDAO.updateAtraccion(atraccionDos);
@@ -52,13 +52,13 @@ public class PromocionAbsoluta extends Promocion {
 
 	@Override
 	public String toString() {
-		return (this.getNombre()+": Si compra la atraccion " + this.atraccionUno.getNombre()
-				+ " y la atraccion " + this.atraccionDos.getNombre()
-				+ ", obtiene un descuento de $" + this.descuento + " sobre el costo total."
-				+ "\n Tematica: " + this.getTematica()
-				+ "\n Costo Total= $" + this.getCosto()
-				+ "\n Duracion Total= " + this.getTiempo() + " horas");
-	}
+		return (this.getNombre() + ": Si compra la atraccion " + this.atraccionUno.getNombre() 
+			+ " y la atraccion " + this.atraccionDos.getNombre() 
+			+ ", obtiene un descuento de $" + this.descuento
+			+ " sobre el costo total." + "\n Tematica: " + this.getTematica() 
+			+ "\n Costo Total= $"+ this.getCosto() 
+			+ "\n Duracion Total= " + this.getTiempo() + " horas");
+		}
 
 	public String getTipoPromocion() {
 		return "ABSOLUTA";
@@ -67,7 +67,7 @@ public class PromocionAbsoluta extends Promocion {
 	public double getDescuento() {
 		return descuento;
 	}
-	
+
 	public int getId() {
 		return id;
 	}

@@ -21,9 +21,13 @@ public class App {
 		parque.agregarListaAtracciones(new LinkedList<Adquirible>(atraccionesDAO.findAll()));
 		parque.agregarListaPromociones(new LinkedList<Adquirible>(promocionesDAO.findAll()));
 
+		for (Usuario usuarios : parque.getUsuarios()) {
+			usuarios.actualizarItinerario();
+		}
+
 		parque.cargarCatalogo();
 
-		UI.eleccionDeMenu(parque); 
+		UI.eleccionDeMenu(parque);
 	}
 
 }
