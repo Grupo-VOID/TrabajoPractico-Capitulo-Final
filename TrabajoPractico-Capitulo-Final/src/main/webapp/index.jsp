@@ -80,19 +80,84 @@
                     aria-label="Slide 3"></button>
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
                     aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
+                    aria-label="Slide 5"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5"
+                    aria-label="Slide 6"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="6"
+                    aria-label="Slide 7"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="7"
+                    aria-label="Slide 8"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="8"
+                    aria-label="Slide 9"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="9"
+                    aria-label="Slide 10"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="10"
+                    aria-label="Slide 11"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="11"
+                    aria-label="Slide 12"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="12"
+                    aria-label="Slide 13"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="13"
+                    aria-label="Slide 14"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="14"
+                    aria-label="Slide 15"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="15"
+                    aria-label="Slide 16"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="16"
+                    aria-label="Slide 17"></button>
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="images/promociones/promoArg.jpeg" class="d-block w-100" alt="promocion">
+                    <img src="images/banner/promoArg.jpeg" class="d-block w-100" alt="promocion">
                 </div>
                 <div class="carousel-item">
-                    <img src="images/promociones/promoCom.jpeg" class="d-block w-100" alt="...">
+                    <img src="images/banner/promoCom.jpeg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="images/promociones/promoDra.jpeg" class="d-block w-100" alt="...">
+                    <img src="images/banner/promoDra.jpeg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="images/promociones/promoPol.jpeg" class="d-block w-100" alt="...">
+                    <img src="images/banner/promoPol.jpeg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/banner/BetterCallSaul.jpeg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/banner/BlackList.jpeg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/banner/BreakingBad.jpeg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/banner/Dark.jpeg" class="d-block w-100" alt="promocion">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/banner/ElMarginal.jpeg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/banner/ElReino.jpeg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/banner/Glee.jpeg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/banner/LaCasaDePapel.jpeg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/banner/Lupin.jpeg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/banner/ModernFamilly.jpeg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/banner/Okupas.jpeg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/banner/PeakyBlinders.jpeg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/banner/TheOffice.jpeg" class="d-block w-100" alt="...">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
@@ -107,12 +172,12 @@
             </button>
         </div>
     </div>
-    <section class="container secciones">
+    <div class="container">
         <hr>
-        <div class="row tarjetas">
+        <div class="row card-group">
             <div class="col-4 tarjeta">
                 <div class="card tarjeta" style="width: 18rem;">
-                    <img src="images/atracciones/breakingBad.png" class="card-img-top" alt="...">
+                    <img src="images/atracciones/breakingBad.jpeg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Breaking Bad</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of
@@ -120,7 +185,7 @@
                             content.</p>
                         <button type="button" class="btn btn-primary" data-toggle="modal"
                             data-target="#exampleModalLong1">
-                            Launch demo modal
+                            Ver detalles
                         </button>
                         <div class="modal fade bd-example-modal-lg" id="exampleModalLong1" tabindex="-1" role="dialog"
                             aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -136,7 +201,8 @@
                                         <div class="container-fluid">
                                             <div class="row">
                                                 <div class="col-md-6">
-                                                    <img src="images/atracciones/breakingBad.png" alt="breaking Bad">
+                                                    <img src="images/atracciones/breakingBad.jpeg"
+                                                        class="img-responsive fit-image" alt="breaking Bad">
 
                                                 </div>
                                                 <div class="col-md-6">
@@ -166,8 +232,8 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
-                                            data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                            data-dismiss="modal">Cerrar</button>
+                                        <button type="button" class="btn btn-primary">Comprar</button>
                                     </div>
                                 </div>
                             </div>
@@ -177,7 +243,7 @@
             </div>
             <div class="col-4 tarjeta">
                 <div class="card tarjeta" style="width: 18rem;">
-                    <img src="images/atracciones/theOffice.png" class="card-img-top" alt="...">
+                    <img src="images/atracciones/theOffice.jpeg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">The Office</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of
@@ -185,7 +251,7 @@
                             content.</p>
                         <button type="button" class="btn btn-primary" data-toggle="modal"
                             data-target="#exampleModalLong2">
-                            Launch demo modal
+                            Ver detalles
                         </button>
                         <div class="modal fade bd-example-modal-lg" id="exampleModalLong2" tabindex="-1" role="dialog"
                             aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -201,7 +267,8 @@
                                         <div class="container-fluid">
                                             <div class="row">
                                                 <div class="col-md-6">
-                                                    <img src="images/atracciones/theOffice.png" alt="breaking Bad">
+                                                    <img src="images/atracciones/theOffice.jpeg"
+                                                        class="img-responsive fit-image" alt="breaking Bad">
 
                                                 </div>
                                                 <div class="col-md-6">
@@ -225,8 +292,8 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
-                                            data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                            data-dismiss="modal">Cerrar</button>
+                                        <button type="button" class="btn btn-primary">Comprar</button>
                                     </div>
                                 </div>
                             </div>
@@ -243,10 +310,10 @@
                             the card's
                             content.</p>
                         <button type="button" class="btn btn-primary" data-toggle="modal"
-                            data-target="#exampleModalLong">
-                            Launch demo modal
+                            data-target="#exampleModalLong3">
+                            Ver detalles
                         </button>
-                        <div class="modal fade bd-example-modal-lg" id="exampleModalLong" tabindex="-1" role="dialog"
+                        <div class="modal fade bd-example-modal-lg" id="exampleModalLong3" tabindex="-1" role="dialog"
                             aria-labelledby="myLargeModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-lg" role="document">
                                 <div class="modal-content">
@@ -260,7 +327,8 @@
                                         <div class="container-fluid">
                                             <div class="row">
                                                 <div class="col-md-6">
-                                                    <img src="images/atracciones/glee.png" alt="breaking Bad">
+                                                    <img src="images/atracciones/glee.png"
+                                                        class="img-responsive fit-image" alt="breaking Bad">
 
                                                 </div>
                                                 <div class="col-md-6">
@@ -291,8 +359,8 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
-                                            data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                            data-dismiss="modal">Cerrar</button>
+                                        <button type="button" class="btn btn-primary">Comprar</button>
                                     </div>
                                 </div>
                             </div>
@@ -309,10 +377,10 @@
                             the card's
                             content.</p>
                         <button type="button" class="btn btn-primary" data-toggle="modal"
-                            data-target="#exampleModalLong">
-                            Launch demo modal
+                            data-target="#exampleModalLong4">
+                            Ver detalles
                         </button>
-                        <div class="modal fade bd-example-modal-lg" id="exampleModalLong" tabindex="-1" role="dialog"
+                        <div class="modal fade bd-example-modal-lg" id="exampleModalLong4" tabindex="-1" role="dialog"
                             aria-labelledby="myLargeModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-lg" role="document">
                                 <div class="modal-content">
@@ -327,7 +395,7 @@
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <img src="images/atracciones/betterCallSaull.png"
-                                                        alt="breaking Bad">
+                                                        class="img-responsive fit-image" alt="breaking Bad">
 
                                                 </div>
                                                 <div class="col-md-6">
@@ -361,8 +429,8 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
-                                            data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                            data-dismiss="modal">Cerrar</button>
+                                        <button type="button" class="btn btn-primary">Comprar</button>
                                     </div>
                                 </div>
                             </div>
@@ -380,10 +448,10 @@
                             rodeado de
                             peligrosos criminales que no deben conocer su verdadera identidad.</p>
                         <button type="button" class="btn btn-primary" data-toggle="modal"
-                            data-target="#exampleModalLong">
-                            Launch demo modal
+                            data-target="#exampleModalLong5">
+                            Ver detalles
                         </button>
-                        <div class="modal fade bd-example-modal-lg" id="exampleModalLong" tabindex="-1" role="dialog"
+                        <div class="modal fade bd-example-modal-lg" id="exampleModalLong5" tabindex="-1" role="dialog"
                             aria-labelledby="myLargeModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-lg" role="document">
                                 <div class="modal-content">
@@ -397,7 +465,8 @@
                                         <div class="container-fluid">
                                             <div class="row">
                                                 <div class="col-md-6">
-                                                    <img src="images/atracciones/elMarginal.png" alt="breaking Bad">
+                                                    <img src="images/atracciones/elMarginal.png"
+                                                        class="img-responsive fit-image" alt="breaking Bad">
 
                                                 </div>
                                                 <div class="col-md-6">
@@ -415,8 +484,8 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
-                                            data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                            data-dismiss="modal">Cerrar</button>
+                                        <button type="button" class="btn btn-primary">Comprar</button>
                                     </div>
                                 </div>
                             </div>
@@ -433,10 +502,10 @@
                             the card's
                             content.</p>
                         <button type="button" class="btn btn-primary" data-toggle="modal"
-                            data-target="#exampleModalLong">
-                            Launch demo modal
+                            data-target="#exampleModalLong6">
+                            Ver detalles
                         </button>
-                        <div class="modal fade bd-example-modal-lg" id="exampleModalLong" tabindex="-1" role="dialog"
+                        <div class="modal fade bd-example-modal-lg" id="exampleModalLong6" tabindex="-1" role="dialog"
                             aria-labelledby="myLargeModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-lg" role="document">
                                 <div class="modal-content">
@@ -450,7 +519,8 @@
                                         <div class="container-fluid">
                                             <div class="row">
                                                 <div class="col-md-6">
-                                                    <img src="images/atracciones/okupas.png" alt="breaking Bad">
+                                                    <img src="images/atracciones/okupas.png"
+                                                        class="img-responsive fit-image" alt="...">
 
                                                 </div>
                                                 <div class="col-md-6">
@@ -470,8 +540,8 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
-                                            data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                            data-dismiss="modal">Cerrar</button>
+                                        <button type="button" class="btn btn-primary">Comprar</button>
                                     </div>
                                 </div>
                             </div>
@@ -489,10 +559,10 @@
                             compañero
                             de fórmula tiene la posibilidad de convertirse en presidente.</p>
                         <button type="button" class="btn btn-primary" data-toggle="modal"
-                            data-target="#exampleModalLong">
-                            Launch demo modal
+                            data-target="#exampleModalLong7">
+                            Ver detalles
                         </button>
-                        <div class="modal fade bd-example-modal-lg" id="exampleModalLong" tabindex="-1" role="dialog"
+                        <div class="modal fade bd-example-modal-lg" id="exampleModalLong7" tabindex="-1" role="dialog"
                             aria-labelledby="myLargeModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-lg" role="document">
                                 <div class="modal-content">
@@ -506,7 +576,8 @@
                                         <div class="container-fluid">
                                             <div class="row">
                                                 <div class="col-md-6">
-                                                    <img src="images/atracciones/elReino.png" alt="...">
+                                                    <img src="images/atracciones/elReino.png"
+                                                        class="img-responsive fit-image" alt="...">
 
                                                 </div>
                                                 <div class="col-md-6">
@@ -522,8 +593,8 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
-                                            data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                            data-dismiss="modal">Cerrar</button>
+                                        <button type="button" class="btn btn-primary">Comprar</button>
                                     </div>
                                 </div>
                             </div>
@@ -533,17 +604,17 @@
             </div>
             <div class="col-4 tarjeta">
                 <div class="card tarjeta" style="width: 18rem;">
-                    <img src="images/atracciones/modernFamily.jpg" class="card-img-top" alt="...">
+                    <img src="images/atracciones/modernFamily.jpeg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Modern Family</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                             the card's
                             content.</p>
                         <button type="button" class="btn btn-primary" data-toggle="modal"
-                            data-target="#exampleModalLong">
-                            Launch demo modal
+                            data-target="#exampleModalLong8">
+                            Ver detalles
                         </button>
-                        <div class="modal fade bd-example-modal-lg" id="exampleModalLong" tabindex="-1" role="dialog"
+                        <div class="modal fade bd-example-modal-lg" id="exampleModalLong8" tabindex="-1" role="dialog"
                             aria-labelledby="myLargeModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-lg" role="document">
                                 <div class="modal-content">
@@ -557,7 +628,8 @@
                                         <div class="container-fluid">
                                             <div class="row">
                                                 <div class="col-md-6">
-                                                    <img src="images/atracciones/modernFamily.jpg" alt="breaking Bad">
+                                                    <img src="images/atracciones/modernFamily.jpeg"
+                                                        class="img-responsive fit-image" alt="...">
 
                                                 </div>
                                                 <div class="col-md-6">
@@ -591,8 +663,8 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
-                                            data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                            data-dismiss="modal">Cerrar</button>
+                                        <button type="button" class="btn btn-primary">Comprar</button>
                                     </div>
                                 </div>
                             </div>
@@ -609,10 +681,10 @@
                             the card's
                             content.</p>
                         <button type="button" class="btn btn-primary" data-toggle="modal"
-                            data-target="#exampleModalLong">
-                            Launch demo modal
+                            data-target="#exampleModalLong9">
+                            Ver detalles
                         </button>
-                        <div class="modal fade bd-example-modal-lg" id="exampleModalLong" tabindex="-1" role="dialog"
+                        <div class="modal fade bd-example-modal-lg" id="exampleModalLong9" tabindex="-1" role="dialog"
                             aria-labelledby="myLargeModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-lg" role="document">
                                 <div class="modal-content">
@@ -626,7 +698,8 @@
                                         <div class="container-fluid">
                                             <div class="row">
                                                 <div class="col-md-6">
-                                                    <img src="images/atracciones/peakyBlinders.jpg" alt="...">
+                                                    <img src="images/atracciones/peakyBlinders.jpg"
+                                                        class="img-responsive fit-image" alt="...">
 
                                                 </div>
                                                 <div class="col-md-6">
@@ -644,8 +717,8 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
-                                            data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                            data-dismiss="modal">Cerrar</button>
+                                        <button type="button" class="btn btn-primary">Comprar</button>
                                     </div>
                                 </div>
                             </div>
@@ -655,17 +728,17 @@
             </div>
             <div class="col-4 tarjeta">
                 <div class="card tarjeta" style="width: 18rem;">
-                    <img src="images/atracciones/theBlacklist.png" class="card-img-top" alt="...">
+                    <img src="images/atracciones/theBlacklist.jpeg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">The Blacklist</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                             the card's
                             content.</p>
                         <button type="button" class="btn btn-primary" data-toggle="modal"
-                            data-target="#exampleModalLong">
-                            Launch demo modal
+                            data-target="#exampleModalLong10">
+                            Ver detalles
                         </button>
-                        <div class="modal fade bd-example-modal-lg" id="exampleModalLong" tabindex="-1" role="dialog"
+                        <div class="modal fade bd-example-modal-lg" id="exampleModalLong10" tabindex="-1" role="dialog"
                             aria-labelledby="myLargeModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-lg" role="document">
                                 <div class="modal-content">
@@ -679,11 +752,12 @@
                                         <div class="container-fluid">
                                             <div class="row">
                                                 <div class="col-md-6">
-                                                    <img src="images/atracciones/theBlacklist.png" alt="...">
+                                                    <img src="images/atracciones/theBlacklist.jpeg"
+                                                        class="img-responsive fit-image" alt="...">
 
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <h2>Okupas</h2>
+                                                    <h2>The Blacklist</h2>
                                                     <p>
                                                         Cuando el exagente de gobierno y fugitivo Raymond "Red"
                                                         Reddington se entrega al FBI, les
@@ -708,8 +782,8 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
-                                            data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                            data-dismiss="modal">Cerrar</button>
+                                        <button type="button" class="btn btn-primary">Comprar</button>
                                     </div>
                                 </div>
                             </div>
@@ -727,10 +801,10 @@
                             padre de
                             las injusticias sufridas por parte de una familia adinerada.</p>
                         <button type="button" class="btn btn-primary" data-toggle="modal"
-                            data-target="#exampleModalLong">
-                            Launch demo modal
+                            data-target="#exampleModalLong11">
+                            Ver detalles
                         </button>
-                        <div class="modal fade bd-example-modal-lg" id="exampleModalLong" tabindex="-1" role="dialog"
+                        <div class="modal fade bd-example-modal-lg" id="exampleModalLong11" tabindex="-1" role="dialog"
                             aria-labelledby="myLargeModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-lg" role="document">
                                 <div class="modal-content">
@@ -744,7 +818,8 @@
                                         <div class="container-fluid">
                                             <div class="row">
                                                 <div class="col-md-6">
-                                                    <img src="images/atracciones/lupin.png" alt="...">
+                                                    <img src="images/atracciones/lupin.png"
+                                                        class="img-responsive fit-image" alt="...">
 
                                                 </div>
                                                 <div class="col-md-6">
@@ -760,8 +835,8 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
-                                            data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                            data-dismiss="modal">Cerrar</button>
+                                        <button type="button" class="btn btn-primary">Comprar</button>
                                     </div>
                                 </div>
                             </div>
@@ -779,10 +854,10 @@
                             Nacional de Moneda y Timbre. Cinco meses de preparación quedarán reducidos a once días
                             para poder llevar a cabo con éxito el gran golpe.</p>
                         <button type="button" class="btn btn-primary" data-toggle="modal"
-                            data-target="#exampleModalLong">
-                            Launch demo modal
+                            data-target="#exampleModalLong12">
+                            Ver detalles
                         </button>
-                        <div class="modal fade bd-example-modal-lg" id="exampleModalLong" tabindex="-1" role="dialog"
+                        <div class="modal fade bd-example-modal-lg" id="exampleModalLong12" tabindex="-1" role="dialog"
                             aria-labelledby="myLargeModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-lg" role="document">
                                 <div class="modal-content">
@@ -796,7 +871,8 @@
                                         <div class="container-fluid">
                                             <div class="row">
                                                 <div class="col-md-6">
-                                                    <img src="images/atracciones/casaPapel.jpg" alt="...">
+                                                    <img src="images/atracciones/casaPapel.jpg"
+                                                        class="img-responsive fit-image" alt="...">
 
                                                 </div>
                                                 <div class="col-md-6">
@@ -814,8 +890,8 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
-                                            data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                            data-dismiss="modal">Cerrar</button>
+                                        <button type="button" class="btn btn-primary">Comprar</button>
                                     </div>
                                 </div>
                             </div>
@@ -825,7 +901,7 @@
             </div>
             <div class="col-4 tarjeta">
                 <div class="card tarjeta" style="width: 18rem;">
-                    <img src="images/atracciones/dark.png" class="card-img-top" alt="...">
+                    <img src="images/atracciones/dark.jpeg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Dark</h5>
                         <p class="card-text">La desaparición de dos niños muestra los vínculos entre cuatro familias y
@@ -833,10 +909,10 @@
                             pasado de
                             una pequeña ciudad.</p>
                         <button type="button" class="btn btn-primary" data-toggle="modal"
-                            data-target="#exampleModalLong">
-                            Launch demo modal
+                            data-target="#exampleModalLong13">
+                            Ver detalles
                         </button>
-                        <div class="modal fade bd-example-modal-lg" id="exampleModalLong" tabindex="-1" role="dialog"
+                        <div class="modal fade bd-example-modal-lg" id="exampleModalLong13" tabindex="-1" role="dialog"
                             aria-labelledby="myLargeModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-lg" role="document">
                                 <div class="modal-content">
@@ -850,7 +926,8 @@
                                         <div class="container-fluid">
                                             <div class="row">
                                                 <div class="col-md-6">
-                                                    <img src="images/atracciones/dark.png" alt="...">
+                                                    <img src="images/atracciones/dark.jpeg"
+                                                        class="img-responsive fit-image" alt="...">
 
                                                 </div>
                                                 <div class="col-md-6">
@@ -867,8 +944,8 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
-                                            data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                            data-dismiss="modal">Cerrar</button>
+                                        <button type="button" class="btn btn-primary">Comprar</button>
                                     </div>
                                 </div>
                             </div>
@@ -876,8 +953,8 @@
                     </div>
                 </div>
             </div>
-
-    </section>
+        </div>
+    </div>
     <footer class="container secciones">
         <hr>
         <div class="row">
