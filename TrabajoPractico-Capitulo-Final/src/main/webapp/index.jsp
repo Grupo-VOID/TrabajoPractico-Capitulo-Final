@@ -303,7 +303,7 @@
             </div>
             <div class="col-4 tarjeta">
                 <div class="card tarjeta" style="width: 18rem;">
-                    <img src="images/atracciones/glee.png" class="card-img-top" alt="...">
+                    <img src="images/atracciones/glee.jpeg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Glee</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of
@@ -327,7 +327,7 @@
                                         <div class="container-fluid">
                                             <div class="row">
                                                 <div class="col-md-6">
-                                                    <img src="images/atracciones/glee.png"
+                                                    <img src="images/atracciones/glee.jpeg"
                                                         class="img-responsive fit-image" alt="breaking Bad">
 
                                                 </div>
@@ -370,7 +370,7 @@
             </div>
             <div class="col-4 tarjeta">
                 <div class="card tarjeta" style="width: 18rem;">
-                    <img src="images/atracciones/betterCallSaull.png" class="card-img-top" alt="...">
+                    <img src="images/atracciones/betterCallSaul.jpeg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Better Call Saul</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of
@@ -394,7 +394,7 @@
                                         <div class="container-fluid">
                                             <div class="row">
                                                 <div class="col-md-6">
-                                                    <img src="images/atracciones/betterCallSaull.png"
+                                                    <img src="images/atracciones/betterCallSaul.jpeg"
                                                         class="img-responsive fit-image" alt="breaking Bad">
 
                                                 </div>
@@ -440,7 +440,7 @@
             </div>
             <div class="col-4 tarjeta">
                 <div class="card tarjeta" style="width: 18rem;">
-                    <img src="images/atracciones/elMarginal2.png" class="card-img-top" alt="...">
+                    <img src="images/atracciones/elMarginal.jpeg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">El Marginal</h5>
                         <p class="card-text">Mientras investiga un secuestro, un expolicía se infiltra en una prisión y
@@ -465,7 +465,7 @@
                                         <div class="container-fluid">
                                             <div class="row">
                                                 <div class="col-md-6">
-                                                    <img src="images/atracciones/elMarginal.png"
+                                                    <img src="images/atracciones/elMarginal.jpeg"
                                                         class="img-responsive fit-image" alt="breaking Bad">
 
                                                 </div>
@@ -495,7 +495,7 @@
             </div>
             <div class="col-4 tarjeta">
                 <div class="card tarjeta" style="width: 18rem;">
-                    <img src="images/atracciones/okupas.png" class="card-img-top" alt="...">
+                    <img src="images/atracciones/okupas.jpeg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Okupas</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of
@@ -519,7 +519,7 @@
                                         <div class="container-fluid">
                                             <div class="row">
                                                 <div class="col-md-6">
-                                                    <img src="images/atracciones/okupas.png"
+                                                    <img src="images/atracciones/okupas.jpeg"
                                                         class="img-responsive fit-image" alt="...">
 
                                                 </div>
@@ -551,7 +551,7 @@
             </div>
             <div class="col-4 tarjeta">
                 <div class="card tarjeta" style="width: 18rem;">
-                    <img src="images/atracciones/elReino2.jpg" class="card-img-top" alt="...">
+                    <img src="images/atracciones/elReino.jpeg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">El Reino</h5>
                         <p class="card-text">Durante el cierre de una campaña electoral, un candidato es asesinado y
@@ -576,7 +576,7 @@
                                         <div class="container-fluid">
                                             <div class="row">
                                                 <div class="col-md-6">
-                                                    <img src="images/atracciones/elReino.png"
+                                                    <img src="images/atracciones/elReino.jpeg"
                                                         class="img-responsive fit-image" alt="...">
 
                                                 </div>
@@ -674,7 +674,7 @@
             </div>
             <div class="col-4 tarjeta">
                 <div class="card tarjeta" style="width: 18rem;">
-                    <img src="images/atracciones/peakyBlinders.jpg" class="card-img-top" alt="...">
+                    <img src="images/atracciones/peakyBlinders.jpeg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Peaky Blinders</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of
@@ -698,7 +698,7 @@
                                         <div class="container-fluid">
                                             <div class="row">
                                                 <div class="col-md-6">
-                                                    <img src="images/atracciones/peakyBlinders.jpg"
+                                                    <img src="images/atracciones/peakyBlinders.jpeg"
                                                         class="img-responsive fit-image" alt="...">
 
                                                 </div>
@@ -793,7 +793,7 @@
             </div>
             <div class="col-4 tarjeta">
                 <div class="card tarjeta" style="width: 18rem;">
-                    <img src="images/atracciones/lupin.png" class="card-img-top" alt="...">
+                    <img src="images/atracciones/lupin.jpeg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Lupin</h5>
                         <p class="card-text">Basada en la historia de Arsène Lupin, el ladrón Assane Diop se propone
@@ -818,7 +818,7 @@
                                         <div class="container-fluid">
                                             <div class="row">
                                                 <div class="col-md-6">
-                                                    <img src="images/atracciones/lupin.png"
+                                                    <img src="images/atracciones/lupin.jpeg"
                                                         class="img-responsive fit-image" alt="...">
 
                                                 </div>
@@ -846,7 +846,7 @@
             </div>
             <div class="col-4 tarjeta">
                 <div class="card tarjeta" style="width: 18rem;">
-                    <img src="images/atracciones/casaPapel2.png" class="card-img-top" alt="...">
+                    <img src="images/atracciones/casaPapel.jpeg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">La Casa de Papel</h5>
                         <p class="card-text">Una banda organizada de ladrones se propone cometer el atraco del siglo en
@@ -871,7 +871,7 @@
                                         <div class="container-fluid">
                                             <div class="row">
                                                 <div class="col-md-6">
-                                                    <img src="images/atracciones/casaPapel.jpg"
+                                                    <img src="images/atracciones/casaPapel.jpeg"
                                                         class="img-responsive fit-image" alt="...">
 
                                                 </div>
