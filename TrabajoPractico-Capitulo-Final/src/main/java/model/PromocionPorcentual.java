@@ -74,4 +74,13 @@ public class PromocionPorcentual extends Promocion {
 	public int getId() {
 		return id;
 	}
+
+	public void setPorcentajeDescuento(double porcentajeDescuento) {
+		this.porcentajeDescuento = porcentajeDescuento;
+	}
+
+	public void setAtraccionesIncluidas(Atraccion atraccionUno, Atraccion atraccionDos) {
+		this.atraccionUno = atraccionUno;
+		this.atraccionDos = atraccionDos;
+	}	
 }

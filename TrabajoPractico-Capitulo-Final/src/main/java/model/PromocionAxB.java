@@ -74,4 +74,10 @@ public class PromocionAxB extends Promocion {
 	public int getId() {
 		return id;
 	}
+
+	public void setAtraccionIncluidas(Atraccion atraccionUno, Atraccion atraccionDos, Atraccion atraccionGratis) {
+		this.atraccionUno = atraccionUno;
+		this.atraccionDos = atraccionDos;
+		this.atraccionGratis = atraccionGratis;
+	}	
 }

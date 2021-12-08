@@ -33,4 +33,12 @@ public abstract class Promocion implements Adquirible {
 	public boolean esPromocion() {
 		return true;
 	}
+
+	public void setCostoTotal(double costoTotal) {
+		this.costoTotal = costoTotal;
+	}
+
+	public void setDuracionTotal(double duracionTotal) {
+		this.duracionTotal = duracionTotal;
+	}
 }

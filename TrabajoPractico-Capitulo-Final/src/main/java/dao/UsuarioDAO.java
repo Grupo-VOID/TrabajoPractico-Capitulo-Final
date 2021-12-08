@@ -9,7 +9,7 @@ public interface UsuarioDAO extends GenericDAO<Usuario> {
 
 	public Usuario buscarPorId(int id);
 	
-	public int agregarUsuario(ParqueAtracciones parque, String nombre, String tematica, double monedas, double tiempo);
+	public int agregarUsuario(ParqueAtracciones parque, String username, String password, String nombre, String tematica, double monedas, double tiempo, boolean admin);
 	
 	public int eliminarUsuario(Usuario usuario, ParqueAtracciones parque);
 	

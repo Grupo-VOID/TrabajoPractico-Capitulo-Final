@@ -71,4 +71,14 @@ public class PromocionAbsoluta extends Promocion {
 	public int getId() {
 		return id;
 	}
+
+	public void setDescuento(double descuento) {
+		this.descuento = descuento;
+	}
+
+	// ojo si se setea atracciones incluidas y el cliente ya tenia comprada esa atracción puede dar error en la base
+	public void setAtraccionesIncluidas(Atraccion atraccionUno, Atraccion atraccionDos) {
+		this.atraccionUno = atraccionUno;
+		this.atraccionDos = atraccionDos;
+	}
 }

@@ -73,6 +73,26 @@ public class Atraccion implements Adquirible {
 		return false;
 	}
 
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public void setTematica(String tematica) {
+		this.tematica = tematica;
+	}
+
+	public void setCosto(double costo) {
+		this.costo = costo;
+	}
+
+	public void setDuracion(double duracion) {
+		this.duracion = duracion;
+	}
+
+	public void setCupoMaximo(int cupoMaximo) {
+		this.cupoMaximo = cupoMaximo;
+	}
+
 	@Override
 	public String toString() {
 		return String.format("Atraccion: " + this.nombre 

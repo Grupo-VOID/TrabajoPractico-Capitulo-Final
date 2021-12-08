@@ -22,7 +22,7 @@ public class ItinerarioDAOImpl implements ItinerarioDAO {
 			AtraccionDAO atraccionDAO = DAOFactory.getAtraccionesDAO();
 
 			PreparedStatement statement = conn.prepareStatement(sql);
-			statement.setInt(1, usuario.getID());
+			statement.setInt(1, usuario.getId());
 			statement.setInt(2, atraccionDAO.encontrarIdAtraccion(atraccion));
 			int rows = statement.executeUpdate();
 
@@ -40,7 +40,7 @@ public class ItinerarioDAOImpl implements ItinerarioDAO {
 			PromocionDAO promocionDAO = DAOFactory.getPromocionesDAO();
 
 			PreparedStatement statement = conn.prepareStatement(sql);
-			statement.setInt(1, usuario.getID());
+			statement.setInt(1, usuario.getId());
 			statement.setInt(2, promocionDAO.encontrarIdPromocion(promocion));
 			int rows = statement.executeUpdate();
 

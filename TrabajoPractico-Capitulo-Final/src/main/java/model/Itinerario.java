@@ -29,7 +29,7 @@ public class Itinerario {
 	public ArrayList<Adquirible> agregarAdquiriblesComprados(Usuario usuario) {
 
 		ItinerarioDAO itinerarioDAO = DAOFactory.getItinerarioDAO();
-		ArrayList<Adquirible> adquiribles = (ArrayList<Adquirible>) itinerarioDAO.obtenerAdquiribles(usuario.getID());
+		ArrayList<Adquirible> adquiribles = (ArrayList<Adquirible>) itinerarioDAO.obtenerAdquiribles(usuario.getId());
 
 		for (Adquirible adquirible : adquiribles) {
 			tiempoTotal += adquirible.getTiempo();

@@ -16,8 +16,7 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 		try {
 			String sql = "SELECT *\r\n" + "FROM usuarios\r\n"
 					+ "JOIN tematicas_atracciones ta ON ta.id_tematica = usuarios.id_tematica_preferida\r\n"
-					+ "WHERE usuario_activo = 1\r\n" 
-					+ "GROUP BY usuarios.id_usuario";
+					+ "WHERE usuario_activo = 1\r\n" + "GROUP BY usuarios.id_usuario";
 			Connection conn = ConnectionProvider.getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql);
 			ResultSet resultados = statement.executeQuery();
@@ -34,17 +33,21 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 
 	public int updateUsuario(Usuario usuario) {
 		try {
-			String sql = "UPDATE usuarios SET nombre_usuario = ?, dinero_disponible = ?, tiempo_disponible = ?, id_tematica_preferida = ? WHERE id_usuario = ?";
+			String sql = "UPDATE usuarios SET username = ?, password = ?, nombre_usuario = ?, dinero_disponible = ?, tiempo_disponible = ?, id_tematica_preferida = ?, admin = ? WHERE id_usuario = ?";
 			Connection conn = ConnectionProvider.getConnection();
 
 			TipoAtraccionDAO tipoAtraccionDAO = DAOFactory.getTipoAtraccionDAO();
 			
 			PreparedStatement statement = conn.prepareStatement(sql);
-			statement.setString(1, usuario.getNombre());
-			statement.setDouble(2, usuario.getMonedasDisponibles());
-			statement.setDouble(3, usuario.getTiempoDisponible());
-			statement.setInt(4, tipoAtraccionDAO.encontrarId(usuario.getTematica()));
-			statement.setInt(5, usuario.getID());
+			statement.setString(1, usuario.getUsername());
+			statement.setString(2, usuario.getPassword());
+			statement.setString(3, usuario.getNombre());
+			statement.setDouble(4, usuario.getMonedasDisponibles());
+			statement.setDouble(5, usuario.getTiempoDisponible());
+			statement.setInt(6, tipoAtraccionDAO.encontrarId(usuario.getTematica()));
+// ojo porque en la base no existe tipo de dato boolean
+			statement.setBoolean(7, (usuario.esAdministrador()));
+			statement.setInt(8, usuario.getId());
 			int rows = statement.executeUpdate();
 
 			return rows;
@@ -72,22 +75,31 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 		}
 	}
 
-	public int agregarUsuario(ParqueAtracciones parque, String nombre, String tematica, double monedas, double tiempo) {
+	public int agregarUsuario(ParqueAtracciones parque, String username, String password, String nombre, String tematica, double monedas, double tiempo, boolean admin) {
 		try {
-			Usuario usuario = new Usuario(this.obtenerUltimoIDUsuario()+1, nombre, tematica, monedas, tiempo);
+			Usuario usuario = new Usuario(username, password, nombre, tematica, monedas, tiempo, admin);
 			parque.agregarUsuario(usuario);
-			
-			String sql = "INSERT INTO usuarios (nombre_usuario, dinero_disponible, tiempo_disponible, id_tematica_preferida, usuario_activo) VALUES (?, ?, ?, ?, 1)";
+
+			String sql = "INSERT INTO usuarios (username, password, nombre_usuario, dinero_disponible, tiempo_disponible, id_tematica_preferida, admin, usuario_activo) VALUES (?, ?, ?, ?, ?, ?, ?, 1)";
 			Connection conn = ConnectionProvider.getConnection();
-			
+
 			TipoAtraccionDAO tipoAtraccionDAO = DAOFactory.getTipoAtraccionDAO();
 
 			PreparedStatement statement = conn.prepareStatement(sql);
-			statement.setString(1, usuario.getNombre());
-			statement.setDouble(2, usuario.getMonedasDisponibles());
-			statement.setDouble(3, usuario.getTiempoDisponible());
-			statement.setInt(4, tipoAtraccionDAO.encontrarId(usuario.getTematica()));
+			statement.setString(1, usuario.getUsername());
+			statement.setString(2, usuario.getPassword());
+			statement.setString(3, usuario.getNombre());
+			statement.setDouble(4, usuario.getMonedasDisponibles());
+			statement.setDouble(5, usuario.getTiempoDisponible());
+			statement.setInt(6, tipoAtraccionDAO.encontrarId(usuario.getTematica()));
+// ojo porque en la base no existe tipo de dato boolean
+			statement.setBoolean(7, usuario.esAdministrador());
+			
 			int rows = statement.executeUpdate();
+			
+			ResultSet rs = statement.getGeneratedKeys();
+			rs.next();
+			usuario.setId(rs.getInt(1));
 
 			return rows;
 		} catch (Exception e) {
@@ -101,11 +113,11 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 			Connection conn = ConnectionProvider.getConnection();
 
 			PreparedStatement statement = conn.prepareStatement(sql);
-			statement.setInt(1, usuario.getID());
+			statement.setInt(1, usuario.getId());
 			int rows = statement.executeUpdate();
 
 			parque.eliminarUsuario(usuario);
-			
+
 			return rows;
 		} catch (Exception e) {
 			throw new MissingDataException(e);
@@ -131,11 +143,9 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 //		}
 //	}
 
-	
 	public int obtenerUltimoIDUsuario() {
 		try {
-			String sql = "SELECT max(id_usuario AS 'id'\r\n"
-					+ "FROM usuarios";
+			String sql = "SELECT max(id_usuario AS 'id'\r\n" + "FROM usuarios";
 			Connection conn = ConnectionProvider.getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql);
 			ResultSet resultados = statement.executeQuery();
@@ -150,15 +160,19 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 			throw new MissingDataException(e);
 		}
 	}
-	
+
 	private Usuario toUsuario(ResultSet resultados) throws SQLException {
 
 		int id = resultados.getInt("id_usuario");
+		String username = resultados.getString("username");
+		String password = resultados.getString("password");
 		String nombre = resultados.getString("nombre_usuario");
 		String tematica = resultados.getString("nombre_tematica");
 		int dinero = resultados.getInt("dinero_disponible");
 		double tiempo = resultados.getInt("tiempo_disponible");
-		Usuario usuario = new Usuario(id, nombre, tematica, dinero, tiempo);
+// ojo porque en la base no existe tipo de dato boolean
+		boolean admin = resultados.getBoolean("admin");
+		Usuario usuario = new Usuario(id, username, password, nombre, tematica, dinero, tiempo, admin);
 		return usuario;
 	}
 }

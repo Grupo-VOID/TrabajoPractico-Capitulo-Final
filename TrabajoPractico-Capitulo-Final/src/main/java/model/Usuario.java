@@ -4,27 +4,48 @@ import java.util.ArrayList;
 
 import dao.DAOFactory;
 import dao.UsuarioDAO;
+import utils.Crypt;
 
 public class Usuario {
 
-	private final int ID;
+	private int id;
+	private String username;
+	private String password;
 	private String nombre;
 	private String tematicaFavorita;
-	private double monedasIniciales;
+//	private double monedasIniciales;
 	private double monedasDisponibles;
-	private double tiempoInicial;
+//	private double tiempoInicial;
 	private double tiempoDisponible;
+	private boolean admin;
 	protected Itinerario itinerarioUsuario;
 	private ArrayList<Atraccion> listaAtracciones = new ArrayList<Atraccion>();
 
-	public Usuario(int id, String nombre, String tematica, double monedas, double tiempo) {
-		this.ID = id;
+	// USUARIO DE LA BASE DE DATOS
+	public Usuario(int id, String username, String password, String nombre, String tematica, double monedas, double tiempo, boolean admin) {
+		this.id = id;
+		this.username = username;
+		this.password = password;
 		this.nombre = nombre;
 		this.tematicaFavorita = tematica;
-		this.monedasIniciales = monedas;
+	//	this.monedasIniciales = monedas;
 		this.monedasDisponibles = monedas;
-		this.tiempoInicial = tiempo;
-		this.tiempoDisponible = tiempoInicial;
+	//	this.tiempoInicial = tiempo;
+		this.tiempoDisponible = tiempo;
+		this.admin = admin;
+		this.itinerarioUsuario = new Itinerario();
+	}
+	
+	//USUARIO POR PRIMERA VEZ
+	public Usuario(String username, String password, String nombre, String tematica, double monedas, double tiempo, boolean admin) {
+		this.id = 0;
+		this.username = username;
+		this.password = Crypt.hash(password);
+		this.nombre = nombre;
+		this.tematicaFavorita = tematica;
+		this.monedasDisponibles = monedas;
+		this.tiempoDisponible = tiempo;
+		this.admin = admin;
 		this.itinerarioUsuario = new Itinerario();
 	}
 
@@ -32,8 +53,8 @@ public class Usuario {
 		return nombre;
 	}
 
-	public int getID() {
-		return ID;
+	public int getId() {
+		return id;
 	}
 
 	public String getTematica() {
@@ -46,6 +67,14 @@ public class Usuario {
 
 	public double getTiempoDisponible() {
 		return tiempoDisponible;
+	}
+	
+	public String getUsername() {
+		return username;
+	}
+	
+	public String getPassword() {
+		return password;
 	}
 
 	public ArrayList<Atraccion> getListaAtracciones() {
@@ -64,9 +93,9 @@ public class Usuario {
 		}
 	}
 
-	public double monedasUtilizadas() {
-		return this.monedasIniciales - this.monedasDisponibles;
-	}
+//	public double monedasUtilizadas() {
+//		return this.monedasIniciales - this.monedasDisponibles;
+//	}
 
 	public void aceptarSugerencia(Adquirible sugerencia) {
 		this.monedasDisponibles -= sugerencia.getCosto();
@@ -81,16 +110,59 @@ public class Usuario {
 		usuarioDAO.updateUsuario(this);
 	}
 
-	public double getMonedasIniciales() {
-		return monedasIniciales;
-	}
-
-	public double getTiempoInicial() {
-		return tiempoInicial;
-	}
+//	public double getMonedasIniciales() {
+//		return monedasIniciales;
+//	}
+//
+//	public double getTiempoInicial() {
+//		return tiempoInicial;
+//	}
 
 	@Override
 	public String toString() {
 		return this.nombre + this.tiempoDisponible;
+	}
+	
+	public boolean esAdministrador() {
+		return this.admin;
+	}
+	
+	public boolean checkPassword(String password) {
+		// this.password en realidad es el hash del password
+		return Crypt.match(password, this.password);
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public void setTematicaFavorita(String tematicaFavorita) {
+		this.tematicaFavorita = tematicaFavorita;
+	}
+
+	public void setMonedasDisponibles(double monedasDisponibles) {
+		this.monedasDisponibles = monedasDisponibles;
+	}
+
+	public void setTiempoDisponible(double tiempoDisponible) {
+		this.tiempoDisponible = tiempoDisponible;
+	}
+	
+	public void setAdmin(boolean admin) {
+		this.admin = admin;
+	}
+	
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	
+	public void setPassword(String password) {
+		this.password = Crypt.hash(password);
+	}
+	
+	public void setId(int id) {
+		if(this.id == 0) {
+			this.id = id;
+		}
 	}
 }
