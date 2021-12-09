@@ -11,6 +11,7 @@ import jdbc.ConnectionProvider;
 import model.Adquirible;
 import model.Atraccion;
 import model.ParqueAtracciones;
+import model.TipoAtraccion;
 
 public class AtraccionDAOImpl implements AtraccionDAO {
 
@@ -36,22 +37,20 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 		}
 	}
 	
-	public int agregarAtraccion(ParqueAtracciones parque, String nombre, String tematica, double costo, double duracion, int cupoMaximo) {
+	public int agregarAtraccion(ParqueAtracciones parque, String nombre, TipoAtraccion tematica, double costo, double duracion, int cupoMaximo) {
 		try {
 			Atraccion atraccion = new Atraccion(this.obtenerUltimoIDAtraccion()+1, nombre, tematica, costo, duracion, cupoMaximo);
 			parque.agregarAtraccion(atraccion);
 					
 			String sql = "INSERT INTO atracciones (nombre_atraccion, cupo_actual, costo, duracion, id_tematica, atraccion_activa) VALUES (?, ?, ?, ?, ?, 1)";
 			Connection conn = ConnectionProvider.getConnection();
-			
-			TipoAtraccionDAO tipoAtraccionDAO = DAOFactory.getTipoAtraccionDAO();
-
+		
 			PreparedStatement statement = conn.prepareStatement(sql);
 			statement.setString(1, atraccion.getNombre());
 			statement.setInt(2, atraccion.getCupoActual());
 			statement.setDouble(3, atraccion.getCosto());
 			statement.setDouble(4, atraccion.getTiempo());
-			statement.setInt(5, tipoAtraccionDAO.encontrarId(atraccion.getTematica()));
+			statement.setInt(5, atraccion.getTematica().getId());
 			int rows = statement.executeUpdate();
 
 			return rows;
@@ -65,15 +64,13 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 		try {
 			String sql = "UPDATE atracciones SET nombre_atraccion = ?, cupo_actual = ?, costo = ?, duracion = ?, id_tematica = ? WHERE id_atraccion = ?";
 			Connection conn = ConnectionProvider.getConnection();
-
-			TipoAtraccionDAO tipoAtraccionDAO = DAOFactory.getTipoAtraccionDAO();
 			
 			PreparedStatement statement = conn.prepareStatement(sql);
 			statement.setString(1, atraccion.getNombre());
 			statement.setInt(2, atraccion.getCupoMaximo() - atraccion.getCupoActual());
 			statement.setDouble(3, atraccion.getCosto());
 			statement.setDouble(4, atraccion.getTiempo());
-			statement.setInt(5, tipoAtraccionDAO.encontrarId(atraccion.getTematica()));
+			statement.setInt(5, atraccion.getTematica().getId());
 			statement.setInt(5, atraccion.getID());
 			int rows = statement.executeUpdate();
 
@@ -162,9 +159,11 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 	
 	private Atraccion toAtraccion(ResultSet resultados) throws SQLException {
 
+		TipoAtraccionDAO tipoAtraccionDAO = DAOFactory.getTipoAtraccionDAO();
+		
 		int id = resultados.getInt("id_atraccion");
 		String nombre = resultados.getString("nombre_atraccion");
-		String tematica = resultados.getString("nombre_tematica");
+		TipoAtraccion tematica = tipoAtraccionDAO.encontrarTipoAtraccion(resultados.getString("nombre_tematica"));
 		double monedas = resultados.getInt("costo");
 		double tiempo = resultados.getInt("duracion");
 		int cupo = resultados.getInt("cupo_actual");

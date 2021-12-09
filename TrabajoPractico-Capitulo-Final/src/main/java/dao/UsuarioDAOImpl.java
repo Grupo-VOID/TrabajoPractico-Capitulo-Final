@@ -8,6 +8,7 @@ import java.util.LinkedList;
 import java.util.List;
 import jdbc.ConnectionProvider;
 import model.ParqueAtracciones;
+import model.TipoAtraccion;
 import model.Usuario;
 
 public class UsuarioDAOImpl implements UsuarioDAO {
@@ -35,8 +36,6 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 		try {
 			String sql = "UPDATE usuarios SET username = ?, password = ?, nombre_usuario = ?, dinero_disponible = ?, tiempo_disponible = ?, id_tematica_preferida = ?, admin = ? WHERE id_usuario = ?";
 			Connection conn = ConnectionProvider.getConnection();
-
-			TipoAtraccionDAO tipoAtraccionDAO = DAOFactory.getTipoAtraccionDAO();
 			
 			PreparedStatement statement = conn.prepareStatement(sql);
 			statement.setString(1, usuario.getUsername());
@@ -44,7 +43,7 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 			statement.setString(3, usuario.getNombre());
 			statement.setDouble(4, usuario.getMonedasDisponibles());
 			statement.setDouble(5, usuario.getTiempoDisponible());
-			statement.setInt(6, tipoAtraccionDAO.encontrarId(usuario.getTematica()));
+			statement.setInt(6, usuario.getTematica().getId());
 // ojo porque en la base no existe tipo de dato boolean
 			statement.setBoolean(7, (usuario.esAdministrador()));
 			statement.setInt(8, usuario.getId());
@@ -56,26 +55,7 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 		}
 	}
 
-	public Usuario buscarPorId(int id) {
-		try {
-			String sql = "SELECT * FROM usuarios WHERE id_usuario = ?";
-			Connection conn = ConnectionProvider.getConnection();
-			PreparedStatement statement = conn.prepareStatement(sql);
-			statement.setInt(1, id);
-			ResultSet resultados = statement.executeQuery();
-
-			Usuario usuario = null;
-
-			if (resultados.next()) {
-				usuario = toUsuario(resultados);
-			}
-			return usuario;
-		} catch (Exception e) {
-			throw new MissingDataException(e);
-		}
-	}
-
-	public int agregarUsuario(ParqueAtracciones parque, String username, String password, String nombre, String tematica, double monedas, double tiempo, boolean admin) {
+	public int agregarUsuario(ParqueAtracciones parque, String username, String password, String nombre, TipoAtraccion tematica, double monedas, double tiempo, boolean admin) {
 		try {
 			Usuario usuario = new Usuario(username, password, nombre, tematica, monedas, tiempo, admin);
 			parque.agregarUsuario(usuario);
@@ -83,15 +63,13 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 			String sql = "INSERT INTO usuarios (username, password, nombre_usuario, dinero_disponible, tiempo_disponible, id_tematica_preferida, admin, usuario_activo) VALUES (?, ?, ?, ?, ?, ?, ?, 1)";
 			Connection conn = ConnectionProvider.getConnection();
 
-			TipoAtraccionDAO tipoAtraccionDAO = DAOFactory.getTipoAtraccionDAO();
-
 			PreparedStatement statement = conn.prepareStatement(sql);
 			statement.setString(1, usuario.getUsername());
 			statement.setString(2, usuario.getPassword());
 			statement.setString(3, usuario.getNombre());
 			statement.setDouble(4, usuario.getMonedasDisponibles());
 			statement.setDouble(5, usuario.getTiempoDisponible());
-			statement.setInt(6, tipoAtraccionDAO.encontrarId(usuario.getTematica()));
+			statement.setInt(6, usuario.getTematica().getId());
 // ojo porque en la base no existe tipo de dato boolean
 			statement.setBoolean(7, usuario.esAdministrador());
 			
@@ -162,12 +140,14 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 	}
 
 	private Usuario toUsuario(ResultSet resultados) throws SQLException {
+		
+		TipoAtraccionDAO tipoAtraccionDAO = DAOFactory.getTipoAtraccionDAO();
 
 		int id = resultados.getInt("id_usuario");
 		String username = resultados.getString("username");
 		String password = resultados.getString("password");
 		String nombre = resultados.getString("nombre_usuario");
-		String tematica = resultados.getString("nombre_tematica");
+		TipoAtraccion tematica = tipoAtraccionDAO.encontrarTipoAtraccion(resultados.getString("nombre_tematica"));
 		int dinero = resultados.getInt("dinero_disponible");
 		double tiempo = resultados.getInt("tiempo_disponible");
 // ojo porque en la base no existe tipo de dato boolean

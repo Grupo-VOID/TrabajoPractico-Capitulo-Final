@@ -8,6 +8,7 @@ public class ParqueAtracciones {
 	private List<Adquirible> atracciones, promociones;
 	private LinkedList<Adquirible> catalogo = new LinkedList<Adquirible>();
 	private List<Usuario> usuarios;
+	private List<TipoAtraccion> tipoAtracciones;
 
 	public void agregarListaAtracciones(List<Adquirible> atracciones) {
 		this.atracciones = atracciones;
@@ -19,6 +20,10 @@ public class ParqueAtracciones {
 
 	public void agregarListaUsuarios(List<Usuario> usuarios) {
 		this.usuarios = usuarios;
+	}
+	
+	public void agregarListaTipoAtracciones(List<TipoAtraccion> tipoAtracciones) {
+		this.tipoAtracciones = tipoAtracciones;
 	}
 	
 	public void agregarUsuario(Usuario usuario) {
@@ -43,6 +48,14 @@ public class ParqueAtracciones {
 	
 	public void eliminarPromocion(Promocion promocion) {
 		this.promociones.remove(promocion);
+	}
+	
+	public void agregarTipoAtraccion(TipoAtraccion tipoAtraccion) {
+		this.tipoAtracciones.add(tipoAtraccion);
+	}
+	
+	public void eliminarTipoAtraccion(TipoAtraccion tipoAtraccion) {
+		this.tipoAtracciones.remove(tipoAtraccion);
 	}
 
 	public void mostrarUsuarios() {
@@ -78,6 +91,10 @@ public class ParqueAtracciones {
 
 	public List<Adquirible> getPromociones() {
 		return this.promociones;
+	}
+	
+	public List<TipoAtraccion> getTipoAtracciones() {
+		return this.tipoAtracciones;
 	}
 
 	public List<Adquirible> getCatalogo() {

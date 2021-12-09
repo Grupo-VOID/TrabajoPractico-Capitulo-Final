@@ -10,7 +10,7 @@ public class PromocionAxB extends Promocion {
 	private Atraccion atraccionUno;
 	private Atraccion atraccionDos;
 
-	public PromocionAxB(int id, String tematica, Atraccion atraccion1, Atraccion atraccion2, Atraccion atraccionGratis) {
+	public PromocionAxB(int id, TipoAtraccion tematica, Atraccion atraccion1, Atraccion atraccion2, Atraccion atraccionGratis) {
 		super(tematica);
 		this.id = id;
 		this.atraccionUno = atraccion1;
@@ -47,7 +47,7 @@ public class PromocionAxB extends Promocion {
 		this.atraccionDos.comprar();
 		this.atraccionGratis.comprar();
 		
-		AtraccionDAO atraccionDAO = DAOFactory.getAtraccionesDAO();
+		AtraccionDAO atraccionDAO = DAOFactory.getAtraccionDAO();
 		atraccionDAO.updateAtraccion(atraccionUno);
 		atraccionDAO.updateAtraccion(atraccionDos);
 		atraccionDAO.updateAtraccion(atraccionGratis);

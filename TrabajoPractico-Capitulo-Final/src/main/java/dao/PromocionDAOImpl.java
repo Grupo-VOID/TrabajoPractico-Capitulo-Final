@@ -15,6 +15,7 @@ import model.Promocion;
 import model.PromocionAbsoluta;
 import model.PromocionAxB;
 import model.PromocionPorcentual;
+import model.TipoAtraccion;
 
 public class PromocionDAOImpl implements PromocionDAO {
 
@@ -41,7 +42,7 @@ public class PromocionDAOImpl implements PromocionDAO {
 		}
 	}
 
-	public int agregarPromocion(ParqueAtracciones parque, String tipoPromocion, String tematica, Atraccion atraccion1,
+	public int agregarPromocion(ParqueAtracciones parque, String tipoPromocion, TipoAtraccion tematica, Atraccion atraccion1,
 			Atraccion atraccion2, double parametro) {
 		try {
 			Promocion promocion;
@@ -68,7 +69,7 @@ public class PromocionDAOImpl implements PromocionDAO {
 		}
 	}
 
-	public void agregarPromocion(ParqueAtracciones parque, String tipoPromocion, String tematica, Atraccion atraccion1,
+	public void agregarPromocion(ParqueAtracciones parque, String tipoPromocion, TipoAtraccion tematica, Atraccion atraccion1,
 			Atraccion atraccion2, Atraccion atraccion3) {
 		try {
 			Promocion promocion = new PromocionAxB(this.obtenerUltimoIDPromocion() + 1, tematica, atraccion1,
@@ -91,7 +92,7 @@ public class PromocionDAOImpl implements PromocionDAO {
 			Connection conn = ConnectionProvider.getConnection();
 
 			PreparedStatement statement = conn.prepareStatement(sql);
-			statement.setString(1, promocion.getTematica());
+			statement.setString(1, promocion.getTematica().getTematica());
 			statement.setInt(2, this.obtenerIdTipoPromocion(promocion.getTipoPromocion()));
 			statement.setDouble(3, promocion.getDescuento());
 			int rows = statement.executeUpdate();
@@ -108,7 +109,7 @@ public class PromocionDAOImpl implements PromocionDAO {
 			Connection conn = ConnectionProvider.getConnection();
 
 			PreparedStatement statement = conn.prepareStatement(sql);
-			statement.setString(1, promocion.getTematica());
+			statement.setString(1, promocion.getTematica().getTematica());
 			statement.setInt(2, this.obtenerIdTipoPromocion(promocion.getTipoPromocion()));
 			statement.setDouble(3, promocion.getPorcentajeDescuento());
 			int rows = statement.executeUpdate();
@@ -124,10 +125,10 @@ public class PromocionDAOImpl implements PromocionDAO {
 			String sql = "INSERT INTO promociones (nombre_promocion, id_tipo_promocion, parametro, promocion_activa) VALUES (?, ?, ?, 1)";
 			Connection conn = ConnectionProvider.getConnection();
 
-			AtraccionDAO atraccionDAO = DAOFactory.getAtraccionesDAO();
+			AtraccionDAO atraccionDAO = DAOFactory.getAtraccionDAO();
 
 			PreparedStatement statement = conn.prepareStatement(sql);
-			statement.setString(1, promocion.getTematica());
+			statement.setString(1, promocion.getTematica().getTematica());
 			statement.setInt(2, this.obtenerIdTipoPromocion(promocion.getTipoPromocion()));
 			statement.setInt(3, atraccionDAO.encontrarIdAtraccion(promocion.getAtraccionGratis()));
 			int rows = statement.executeUpdate();
@@ -143,7 +144,7 @@ public class PromocionDAOImpl implements PromocionDAO {
 			String sql = "INSERT INTO atracciones_promociones (id_promocion, id_atraccion) VALUES (?, ?)";
 			Connection conn = ConnectionProvider.getConnection();
 
-			AtraccionDAO atraccionDAO = DAOFactory.getAtraccionesDAO();
+			AtraccionDAO atraccionDAO = DAOFactory.getAtraccionDAO();
 
 			PreparedStatement statement = conn.prepareStatement(sql);
 			statement.setInt(1, this.encontrarIdPromocion(promocion));
@@ -201,7 +202,7 @@ public class PromocionDAOImpl implements PromocionDAO {
 			Connection conn = ConnectionProvider.getConnection();
 
 			PreparedStatement statement = conn.prepareStatement(sql);
-			statement.setString(1, promocion.getTematica());
+			statement.setString(1, promocion.getTematica().getTematica());
 			statement.setInt(2, this.obtenerIdTipoPromocion(promocion.getTipoPromocion()));
 			statement.setDouble(3, promocion.getDescuento());
 			statement.setInt(5, promocion.getId());
@@ -219,7 +220,7 @@ public class PromocionDAOImpl implements PromocionDAO {
 			Connection conn = ConnectionProvider.getConnection();
 
 			PreparedStatement statement = conn.prepareStatement(sql);
-			statement.setString(1, promocion.getTematica());
+			statement.setString(1, promocion.getTematica().getTematica());
 			statement.setInt(2, this.obtenerIdTipoPromocion(promocion.getTipoPromocion()));
 			statement.setDouble(3, promocion.getPorcentajeDescuento());
 			statement.setInt(5, promocion.getId());
@@ -236,10 +237,10 @@ public class PromocionDAOImpl implements PromocionDAO {
 			String sql = "UPDATE promociones SET nombre_promocion = ?, id_tipo_promocion = ?, parametro = ? WHERE id_promocion = ?";
 			Connection conn = ConnectionProvider.getConnection();
 
-			AtraccionDAO atraccionDAO = DAOFactory.getAtraccionesDAO();
+			AtraccionDAO atraccionDAO = DAOFactory.getAtraccionDAO();
 
 			PreparedStatement statement = conn.prepareStatement(sql);
-			statement.setString(1, promocion.getTematica());
+			statement.setString(1, promocion.getTematica().getTematica());
 			statement.setInt(2, this.obtenerIdTipoPromocion(promocion.getTipoPromocion()));
 			statement.setDouble(3, atraccionDAO.encontrarIdAtraccion(promocion.getAtraccionGratis()));
 			;
@@ -259,7 +260,7 @@ public class PromocionDAOImpl implements PromocionDAO {
 					+ "ORDER BY ROWID ASC\r\n" + "LIMIT ?, 1\r\n" + ")";
 			Connection conn = ConnectionProvider.getConnection();
 
-			AtraccionDAO atraccionDAO = DAOFactory.getAtraccionesDAO();
+			AtraccionDAO atraccionDAO = DAOFactory.getAtraccionDAO();
 
 			PreparedStatement statement = conn.prepareStatement(sql);
 			statement.setInt(1, atraccionDAO.encontrarIdAtraccion(atraccion));
@@ -278,7 +279,7 @@ public class PromocionDAOImpl implements PromocionDAO {
 			String sql = "SELECT * FROM promociones WHERE nombre_promocion = ?";
 			Connection conn = ConnectionProvider.getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql);
-			statement.setString(1, promocion.getTematica());
+			statement.setString(1, promocion.getTematica().getTematica());
 			ResultSet resultados = statement.executeQuery();
 
 			int id = 0;
@@ -355,11 +356,12 @@ public class PromocionDAOImpl implements PromocionDAO {
 
 	private Promocion toPromocion(ResultSet resultados) throws SQLException {
 		Promocion promocion = null;
-		AtraccionDAO atraccionesDAO = DAOFactory.getAtraccionesDAO();
+		AtraccionDAO atraccionesDAO = DAOFactory.getAtraccionDAO();
+		TipoAtraccionDAO tipoAtraccionDAO = DAOFactory.getTipoAtraccionDAO();
 
 		int id = resultados.getInt("id_promocion");
 		int tipoPromocion = resultados.getInt("id_tipo_promocion");
-		String tematica = resultados.getString("nombre_promocion");
+		TipoAtraccion tematica = tipoAtraccionDAO.encontrarTipoAtraccion(resultados.getString("nombre_promocion"));
 		String atraccionesIncluidas = resultados.getString("lista_atracciones");
 		int parametro = resultados.getInt("parametro");
 

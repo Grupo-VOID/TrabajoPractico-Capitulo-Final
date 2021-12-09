@@ -9,7 +9,7 @@ public class PromocionPorcentual extends Promocion {
 	private double porcentajeDescuento = 0;
 	private Atraccion atraccionUno, atraccionDos;
 
-	public PromocionPorcentual(int id, String tematica, Atraccion atraccion1, Atraccion atraccion2,
+	public PromocionPorcentual(int id, TipoAtraccion tematica, Atraccion atraccion1, Atraccion atraccion2,
 			double porcentajeDescuento) {
 		super(tematica);
 		this.id = id;
@@ -47,7 +47,7 @@ public class PromocionPorcentual extends Promocion {
 		this.atraccionUno.comprar();
 		this.atraccionDos.comprar();
 		
-		AtraccionDAO atraccionDAO = DAOFactory.getAtraccionesDAO();
+		AtraccionDAO atraccionDAO = DAOFactory.getAtraccionDAO();
 		atraccionDAO.updateAtraccion(atraccionUno);
 		atraccionDAO.updateAtraccion(atraccionDos);
 	}

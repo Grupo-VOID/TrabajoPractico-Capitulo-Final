@@ -2,13 +2,18 @@ package dao;
 
 import java.util.List;
 
-public interface TipoAtraccionDAO extends GenericDAO<String> {
+import model.ParqueAtracciones;
+import model.TipoAtraccion;
 
-	public List<String> findAll();
+public interface TipoAtraccionDAO extends GenericDAO<TipoAtraccion> {
 
-	public int agregarTipoAtraccion(String nombre);
+	public List<TipoAtraccion> findAll();
 
-	public int eliminarTipoAtraccion(String nombre);
+	public int agregarTipoAtraccion(ParqueAtracciones parque, String tematica);
 
-	public int encontrarId(String nombre);
+	public int updateTipoAtraccion(TipoAtraccion tipoAtraccion);
+	
+	public int eliminarTipoAtraccion(ParqueAtracciones parque, TipoAtraccion tipoAtraccion);
+
+	public TipoAtraccion encontrarTipoAtraccion(String nombre);
 }

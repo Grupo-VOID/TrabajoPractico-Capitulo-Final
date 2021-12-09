@@ -2,12 +2,12 @@ package model;
 
 public abstract class Promocion implements Adquirible {
 
-	protected final String TEMATICA;
+	protected TipoAtraccion tematica;
 	protected double costoTotal = 0;
 	protected double duracionTotal = 0;
 
-	public Promocion(String tematica) {
-		this.TEMATICA = tematica;
+	public Promocion(TipoAtraccion tematica) {
+		this.tematica = tematica;
 	}
 
 	public abstract double getCosto();
@@ -23,11 +23,11 @@ public abstract class Promocion implements Adquirible {
 	public abstract int getId();
 
 	public String getNombre() {
-		return "Pack " + this.TEMATICA;
+		return "Pack " + this.tematica;
 	}
 
-	public String getTematica() {
-		return TEMATICA;
+	public TipoAtraccion getTematica() {
+		return tematica;
 	}
 
 	public boolean esPromocion() {

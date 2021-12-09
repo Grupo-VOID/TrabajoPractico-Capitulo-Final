@@ -19,7 +19,7 @@ public class ItinerarioDAOImpl implements ItinerarioDAO {
 			String sql = "INSERT INTO itinerarios (id_usuario, id_atraccion_comprada) VALUES (?, ?)";
 			Connection conn = ConnectionProvider.getConnection();
 
-			AtraccionDAO atraccionDAO = DAOFactory.getAtraccionesDAO();
+			AtraccionDAO atraccionDAO = DAOFactory.getAtraccionDAO();
 
 			PreparedStatement statement = conn.prepareStatement(sql);
 			statement.setInt(1, usuario.getId());
@@ -37,7 +37,7 @@ public class ItinerarioDAOImpl implements ItinerarioDAO {
 			String sql = "INSERT INTO itinerarios (id_usuario, id_promocion_comprada) VALUES (?, ?)";
 			Connection conn = ConnectionProvider.getConnection();
 
-			PromocionDAO promocionDAO = DAOFactory.getPromocionesDAO();
+			PromocionDAO promocionDAO = DAOFactory.getPromocionDAO();
 
 			PreparedStatement statement = conn.prepareStatement(sql);
 			statement.setInt(1, usuario.getId());
@@ -66,7 +66,7 @@ public class ItinerarioDAOImpl implements ItinerarioDAO {
 			statement.setInt(2, id);
 			ResultSet resultados = statement.executeQuery();
 
-			AtraccionDAO atraccionesDAO = DAOFactory.getAtraccionesDAO();
+			AtraccionDAO atraccionesDAO = DAOFactory.getAtraccionDAO();
 
 			List<Atraccion> listaAtracciones = new ArrayList<Atraccion>();
 			while (resultados.next()) {
@@ -86,8 +86,8 @@ public class ItinerarioDAOImpl implements ItinerarioDAO {
 			statement.setInt(1, idUsuario);
 			ResultSet resultados = statement.executeQuery();
 
-			AtraccionDAO atraccionesDAO = DAOFactory.getAtraccionesDAO();
-			PromocionDAO promocionesDAO = DAOFactory.getPromocionesDAO();
+			AtraccionDAO atraccionesDAO = DAOFactory.getAtraccionDAO();
+			PromocionDAO promocionesDAO = DAOFactory.getPromocionDAO();
 
 			ArrayList<Adquirible> listaAdquiribles = new ArrayList<Adquirible>();
 			while (resultados.next()) {

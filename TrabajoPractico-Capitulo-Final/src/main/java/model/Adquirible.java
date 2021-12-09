@@ -6,7 +6,7 @@ public interface Adquirible {
 
 	public double getTiempo();
 
-	public String getTematica();
+	public TipoAtraccion getTematica();
 
 	public void comprar();
 

@@ -12,32 +12,28 @@ public class Usuario {
 	private String username;
 	private String password;
 	private String nombre;
-	private String tematicaFavorita;
-//	private double monedasIniciales;
+	private TipoAtraccion tematicaFavorita;
 	private double monedasDisponibles;
-//	private double tiempoInicial;
 	private double tiempoDisponible;
 	private boolean admin;
 	protected Itinerario itinerarioUsuario;
 	private ArrayList<Atraccion> listaAtracciones = new ArrayList<Atraccion>();
 
 	// USUARIO DE LA BASE DE DATOS
-	public Usuario(int id, String username, String password, String nombre, String tematica, double monedas, double tiempo, boolean admin) {
+	public Usuario(int id, String username, String password, String nombre, TipoAtraccion tematica, double monedas, double tiempo, boolean admin) {
 		this.id = id;
 		this.username = username;
 		this.password = password;
 		this.nombre = nombre;
 		this.tematicaFavorita = tematica;
-	//	this.monedasIniciales = monedas;
 		this.monedasDisponibles = monedas;
-	//	this.tiempoInicial = tiempo;
 		this.tiempoDisponible = tiempo;
 		this.admin = admin;
 		this.itinerarioUsuario = new Itinerario();
 	}
 	
 	//USUARIO POR PRIMERA VEZ
-	public Usuario(String username, String password, String nombre, String tematica, double monedas, double tiempo, boolean admin) {
+	public Usuario(String username, String password, String nombre, TipoAtraccion tematica, double monedas, double tiempo, boolean admin) {
 		this.id = 0;
 		this.username = username;
 		this.password = Crypt.hash(password);
@@ -57,7 +53,7 @@ public class Usuario {
 		return id;
 	}
 
-	public String getTematica() {
+	public TipoAtraccion getTematica() {
 		return tematicaFavorita;
 	}
 
@@ -93,10 +89,6 @@ public class Usuario {
 		}
 	}
 
-//	public double monedasUtilizadas() {
-//		return this.monedasIniciales - this.monedasDisponibles;
-//	}
-
 	public void aceptarSugerencia(Adquirible sugerencia) {
 		this.monedasDisponibles -= sugerencia.getCosto();
 		this.tiempoDisponible -= sugerencia.getTiempo();
@@ -110,14 +102,6 @@ public class Usuario {
 		usuarioDAO.updateUsuario(this);
 	}
 
-//	public double getMonedasIniciales() {
-//		return monedasIniciales;
-//	}
-//
-//	public double getTiempoInicial() {
-//		return tiempoInicial;
-//	}
-
 	@Override
 	public String toString() {
 		return this.nombre + this.tiempoDisponible;
@@ -128,7 +112,6 @@ public class Usuario {
 	}
 	
 	public boolean checkPassword(String password) {
-		// this.password en realidad es el hash del password
 		return Crypt.match(password, this.password);
 	}
 
@@ -136,7 +119,7 @@ public class Usuario {
 		this.nombre = nombre;
 	}
 
-	public void setTematicaFavorita(String tematicaFavorita) {
+	public void setTematicaFavorita(TipoAtraccion tematicaFavorita) {
 		this.tematicaFavorita = tematicaFavorita;
 	}
 

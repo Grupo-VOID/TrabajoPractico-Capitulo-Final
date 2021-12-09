@@ -10,13 +10,13 @@ public class Atraccion implements Adquirible {
 
 	private final int ID;
 	private String nombre;
-	private String tematica;
+	private TipoAtraccion tematica;
 	private double costo;
 	private double duracion;
 	private int cupoMaximo;
 	private int lugaresOcupados = 0;
 
-	public Atraccion(int id, String nombre, String tematica, double costo, double duracion, int cupoMaximo) {
+	public Atraccion(int id, String nombre, TipoAtraccion tematica, double costo, double duracion, int cupoMaximo) {
 		this.ID = id;
 		this.nombre = nombre;
 		this.tematica = tematica;
@@ -37,7 +37,7 @@ public class Atraccion implements Adquirible {
 		return ID;
 	}
 	
-	public String getTematica() {
+	public TipoAtraccion getTematica() {
 		return tematica;
 	}
 
@@ -60,7 +60,7 @@ public class Atraccion implements Adquirible {
 	public void comprar() {
 		lugaresOcupados++;
 		
-		AtraccionDAO atraccionDAO = DAOFactory.getAtraccionesDAO();
+		AtraccionDAO atraccionDAO = DAOFactory.getAtraccionDAO();
 		atraccionDAO.updateAtraccion(this);
 	}
 
@@ -77,7 +77,7 @@ public class Atraccion implements Adquirible {
 		this.nombre = nombre;
 	}
 
-	public void setTematica(String tematica) {
+	public void setTematica(TipoAtraccion tematica) {
 		this.tematica = tematica;
 	}
 

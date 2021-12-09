@@ -10,7 +10,7 @@ public class PromocionAbsoluta extends Promocion {
 	private Atraccion atraccionUno;
 	private Atraccion atraccionDos;
 
-	public PromocionAbsoluta(int id, String tematica, Atraccion atraccion1, Atraccion atraccion2, double descuento) {
+	public PromocionAbsoluta(int id, TipoAtraccion tematica, Atraccion atraccion1, Atraccion atraccion2, double descuento) {
 		super(tematica);
 		this.id = id;
 		this.atraccionUno = atraccion1;
@@ -45,7 +45,7 @@ public class PromocionAbsoluta extends Promocion {
 		this.atraccionUno.comprar();
 		this.atraccionDos.comprar();
 
-		AtraccionDAO atraccionDAO = DAOFactory.getAtraccionesDAO();
+		AtraccionDAO atraccionDAO = DAOFactory.getAtraccionDAO();
 		atraccionDAO.updateAtraccion(atraccionUno);
 		atraccionDAO.updateAtraccion(atraccionDos);
 	}

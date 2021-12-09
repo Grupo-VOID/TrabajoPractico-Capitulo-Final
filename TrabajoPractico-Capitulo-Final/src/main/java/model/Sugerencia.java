@@ -3,16 +3,16 @@ package model;
 import java.util.Comparator;
 
 public class Sugerencia implements Comparator<Adquirible> {
-	private String atraccionFavorita;
+	private TipoAtraccion atraccionFavorita;
 
 	public Sugerencia(Usuario usuarioRef) {
 		atraccionFavorita = usuarioRef.getTematica();
 	}
 
 	public int compare(Adquirible adquirible1, Adquirible adquirible2) {
-		if (adquirible1.getTematica() == atraccionFavorita && adquirible2.getTematica() != atraccionFavorita) {
+		if (atraccionFavorita.equals(adquirible1.getTematica()) &&  !atraccionFavorita.equals(adquirible2.getTematica())) {
 			return -1;
-		} else if (adquirible1.getTematica() != atraccionFavorita && adquirible2.getTematica() == atraccionFavorita)
+		} else if (!atraccionFavorita.equals(adquirible1.getTematica()) &&  atraccionFavorita.equals(adquirible2.getTematica()))
 			return 1;
 		if (adquirible1.esPromocion() && !adquirible2.esPromocion())
 			return -1;
