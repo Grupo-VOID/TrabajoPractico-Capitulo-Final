@@ -1,13 +1,5 @@
 body{
-    background-color: rgb(241, 240, 240);
-}
-
-.contenedor-nav{
-    margin-top: 30px;
-}
-
-.barra {
-    background-color: rgb(178, 180, 180);
+    background-color: rgb(255, 255, 255);
 }
 
 .secciones{
@@ -19,13 +11,11 @@ body{
     margin: 30px auto auto auto;
 }
 
-.loguin {
-    background-color: rgb(88, 88, 88);
-    color: whitesmoke;
-}
-
 .fit-image{
     width: 100%;
     object-fit: cover;
     height: 300px;
+}
+.carousel{
+    padding-top: 1cm;
 }

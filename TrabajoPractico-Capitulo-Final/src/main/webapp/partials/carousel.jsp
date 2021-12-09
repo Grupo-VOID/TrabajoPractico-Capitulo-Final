@@ -38,55 +38,55 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="images/banner/promoArg.jpeg" class="d-block w-100" alt="promocion">
+                    <img src="/TrabajoPractico-Capitulo-Final/assets/images/banner/promoArg.jpeg" class="d-block w-100" alt="promocion">
                 </div>
                 <div class="carousel-item">
-                    <img src="images/banner/promoCom.jpeg" class="d-block w-100" alt="...">
+                    <img src="/TrabajoPractico-Capitulo-Final/assets/images/banner/promoCom.jpeg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="images/banner/promoDra.jpeg" class="d-block w-100" alt="...">
+                    <img src="/TrabajoPractico-Capitulo-Final/assets/images/banner/promoDra.jpeg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="images/banner/promoPol.jpeg" class="d-block w-100" alt="...">
+                    <img src="/TrabajoPractico-Capitulo-Final/assets/images/banner/promoPol.jpeg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="images/banner/BetterCallSaul.jpeg" class="d-block w-100" alt="...">
+                    <img src="/TrabajoPractico-Capitulo-Final/assets/images/banner/BetterCallSaul.jpeg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="images/banner/BlackList.jpeg" class="d-block w-100" alt="...">
+                    <img src="/TrabajoPractico-Capitulo-Final/assets/images/banner/BlackList.jpeg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="images/banner/BreakingBad.jpeg" class="d-block w-100" alt="...">
+                    <img src="/TrabajoPractico-Capitulo-Final/assets/images/banner/BreakingBad.jpeg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="images/banner/Dark.jpeg" class="d-block w-100" alt="promocion">
+                    <img src="/TrabajoPractico-Capitulo-Final/assets/images/banner/Dark.jpeg" class="d-block w-100" alt="promocion">
                 </div>
                 <div class="carousel-item">
-                    <img src="images/banner/ElMarginal.jpeg" class="d-block w-100" alt="...">
+                    <img src="/TrabajoPractico-Capitulo-Final/assets/images/banner/ElMarginal.jpeg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="images/banner/ElReino.jpeg" class="d-block w-100" alt="...">
+                    <img src="/TrabajoPractico-Capitulo-Final/assets/images/banner/ElReino.jpeg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="images/banner/Glee.jpeg" class="d-block w-100" alt="...">
+                    <img src="/TrabajoPractico-Capitulo-Final/assets/images/banner/Glee.jpeg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="images/banner/LaCasaDePapel.jpeg" class="d-block w-100" alt="...">
+                    <img src="/TrabajoPractico-Capitulo-Final/assets/images/banner/LaCasaDePapel.jpeg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="images/banner/Lupin.jpeg" class="d-block w-100" alt="...">
+                    <img src="/TrabajoPractico-Capitulo-Final/assets/images/banner/Lupin.jpeg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="images/banner/ModernFamilly.jpeg" class="d-block w-100" alt="...">
+                    <img src="/TrabajoPractico-Capitulo-Final/assets/images/banner/ModernFamilly.jpeg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="images/banner/Okupas.jpeg" class="d-block w-100" alt="...">
+                    <img src="/TrabajoPractico-Capitulo-Final/assets/images/banner/Okupas.jpeg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="images/banner/PeakyBlinders.jpeg" class="d-block w-100" alt="...">
+                    <img src="/TrabajoPractico-Capitulo-Final/assets/images/banner/PeakyBlinders.jpeg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="images/banner/TheOffice.jpeg" class="d-block w-100" alt="...">
+                    <img src="/TrabajoPractico-Capitulo-Final/assets/images/banner/TheOffice.jpeg" class="d-block w-100" alt="...">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
