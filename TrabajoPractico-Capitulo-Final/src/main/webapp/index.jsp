@@ -9,8 +9,9 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
-    <script src="js/bootstrap.min.js"></script>
+    <link rel="shortcur icon" href="/images/nav/void1.jpg">
 
+    <script src="js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
@@ -26,46 +27,38 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
-            <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Promociones</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Atracciones</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Itinerario</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Dropdown
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="mx-auto order-0">
-                <a class="navbar-brand mx-auto" href="#">Navbar 2</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+        <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-dark mb-4">
+            <div class="container">
+                <a class="navbar-brand" href="#">Turismo en la Tierra Media</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-            </div>
-            <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a href="#"><button class="btn btn-primary" type="button">Log In</button></a>
-                    </li>
-                </ul>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Features</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Pricing</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <c:out value="${user.username}"></c:out>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Monedas disponibles</a>
+                                <a class="dropdown-item" href="#">Tiempo Disponible</a>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </nav>
     </header>
@@ -303,7 +296,7 @@
             </div>
             <div class="col-4 tarjeta">
                 <div class="card tarjeta" style="width: 18rem;">
-                    <img src="images/atracciones/glee.jpeg" class="card-img-top" alt="...">
+                    <img src="images/atracciones/glee.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Glee</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of
@@ -327,7 +320,7 @@
                                         <div class="container-fluid">
                                             <div class="row">
                                                 <div class="col-md-6">
-                                                    <img src="images/atracciones/glee.jpeg"
+                                                    <img src="images/atracciones/glee.png"
                                                         class="img-responsive fit-image" alt="breaking Bad">
 
                                                 </div>
@@ -370,7 +363,7 @@
             </div>
             <div class="col-4 tarjeta">
                 <div class="card tarjeta" style="width: 18rem;">
-                    <img src="images/atracciones/betterCallSaul.jpeg" class="card-img-top" alt="...">
+                    <img src="images/atracciones/betterCallSaull.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Better Call Saul</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of
@@ -394,7 +387,7 @@
                                         <div class="container-fluid">
                                             <div class="row">
                                                 <div class="col-md-6">
-                                                    <img src="images/atracciones/betterCallSaul.jpeg"
+                                                    <img src="images/atracciones/betterCallSaull.png"
                                                         class="img-responsive fit-image" alt="breaking Bad">
 
                                                 </div>
@@ -440,7 +433,7 @@
             </div>
             <div class="col-4 tarjeta">
                 <div class="card tarjeta" style="width: 18rem;">
-                    <img src="images/atracciones/elMarginal.jpeg" class="card-img-top" alt="...">
+                    <img src="images/atracciones/elMarginal2.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">El Marginal</h5>
                         <p class="card-text">Mientras investiga un secuestro, un expolicía se infiltra en una prisión y
@@ -465,7 +458,7 @@
                                         <div class="container-fluid">
                                             <div class="row">
                                                 <div class="col-md-6">
-                                                    <img src="images/atracciones/elMarginal.jpeg"
+                                                    <img src="images/atracciones/elMarginal.png"
                                                         class="img-responsive fit-image" alt="breaking Bad">
 
                                                 </div>
@@ -495,7 +488,7 @@
             </div>
             <div class="col-4 tarjeta">
                 <div class="card tarjeta" style="width: 18rem;">
-                    <img src="images/atracciones/okupas.jpeg" class="card-img-top" alt="...">
+                    <img src="images/atracciones/okupas.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Okupas</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of
@@ -519,7 +512,7 @@
                                         <div class="container-fluid">
                                             <div class="row">
                                                 <div class="col-md-6">
-                                                    <img src="images/atracciones/okupas.jpeg"
+                                                    <img src="images/atracciones/okupas.png"
                                                         class="img-responsive fit-image" alt="...">
 
                                                 </div>
@@ -551,7 +544,7 @@
             </div>
             <div class="col-4 tarjeta">
                 <div class="card tarjeta" style="width: 18rem;">
-                    <img src="images/atracciones/elReino.jpeg" class="card-img-top" alt="...">
+                    <img src="images/atracciones/elReino2.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">El Reino</h5>
                         <p class="card-text">Durante el cierre de una campaña electoral, un candidato es asesinado y
@@ -576,7 +569,7 @@
                                         <div class="container-fluid">
                                             <div class="row">
                                                 <div class="col-md-6">
-                                                    <img src="images/atracciones/elReino.jpeg"
+                                                    <img src="images/atracciones/elReino.png"
                                                         class="img-responsive fit-image" alt="...">
 
                                                 </div>
@@ -674,7 +667,7 @@
             </div>
             <div class="col-4 tarjeta">
                 <div class="card tarjeta" style="width: 18rem;">
-                    <img src="images/atracciones/peakyBlinders.jpeg" class="card-img-top" alt="...">
+                    <img src="images/atracciones/peakyBlinders.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Peaky Blinders</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of
@@ -698,7 +691,7 @@
                                         <div class="container-fluid">
                                             <div class="row">
                                                 <div class="col-md-6">
-                                                    <img src="images/atracciones/peakyBlinders.jpeg"
+                                                    <img src="images/atracciones/peakyBlinders.jpg"
                                                         class="img-responsive fit-image" alt="...">
 
                                                 </div>
@@ -793,7 +786,7 @@
             </div>
             <div class="col-4 tarjeta">
                 <div class="card tarjeta" style="width: 18rem;">
-                    <img src="images/atracciones/lupin.jpeg" class="card-img-top" alt="...">
+                    <img src="images/atracciones/lupin.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Lupin</h5>
                         <p class="card-text">Basada en la historia de Arsène Lupin, el ladrón Assane Diop se propone
@@ -818,7 +811,7 @@
                                         <div class="container-fluid">
                                             <div class="row">
                                                 <div class="col-md-6">
-                                                    <img src="images/atracciones/lupin.jpeg"
+                                                    <img src="images/atracciones/lupin.png"
                                                         class="img-responsive fit-image" alt="...">
 
                                                 </div>
@@ -846,7 +839,7 @@
             </div>
             <div class="col-4 tarjeta">
                 <div class="card tarjeta" style="width: 18rem;">
-                    <img src="images/atracciones/casaPapel.jpeg" class="card-img-top" alt="...">
+                    <img src="images/atracciones/casaPapel2.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">La Casa de Papel</h5>
                         <p class="card-text">Una banda organizada de ladrones se propone cometer el atraco del siglo en
@@ -871,7 +864,7 @@
                                         <div class="container-fluid">
                                             <div class="row">
                                                 <div class="col-md-6">
-                                                    <img src="images/atracciones/casaPapel.jpeg"
+                                                    <img src="images/atracciones/casaPapel.jpg"
                                                         class="img-responsive fit-image" alt="...">
 
                                                 </div>
@@ -967,5 +960,4 @@
         </div>
     </footer>
 </body>
-
 </html>
